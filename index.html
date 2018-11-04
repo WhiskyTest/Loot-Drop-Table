@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="css\style.css"> 
+            <link rel="stylesheet" href="css\select-picker.css"> 
+            <link href="css/bootstrap.min.css" rel="stylesheet">
+        </head>
+        
+<div class="parallax"></div><div class = "content">
+            <body>    
+                <div id="title"></div>    
+                <br/>
+
+                <div id="intro">
+
+                    <p>Basic Loot Table</p>
+                    Games often have a random chance of dropping rewards when the player
+                    kills a monster. 
+                    Various methods exist to determine what items drop.
+
+                    One simple method is to create an array of items and assign them each a chance of dropping.
+
+                    This chance is called the 'weight' or 'drop weight'.
+
+                    When it is time to drop loot a random number is generated and compared with the drop weights of each item in the array.
+                    Whichever item matches the number is dropped.
+
+                    The forumla is:
+                    Add up the weights for all items in the array.
+                    Generate a random number between 1 and the total.
+                    Iterate through each item and compare the number to the item's weight.
+                    If it is equal or less than the weight, this item is dropped.
+                    If not, move on to the next item.
+
+                    This website demonstrates a basic loot drop table in action.
+                </div>
+
+
+                
+                <br/>
+
+                <!--Create a place for the output-->
+
+                <br/>
+                <br/>
+                <span>Item Name: </span>
+                <input class="input" type="text" id="input1" maxlength="50"/>
+
+                <span>Weight: </span>
+                <input class="input" type="number" id="input2"/>
+
+                <span>Icon:</span>
+                <select class="selectpicker">
+                    <option value= "isword1" data-thumbnail="img/icons/isword1.png" width = 100 height = 50 >Small Sword</option>
+                    <option value="sword2" data-thumbnail="img/icons/sword2.png">Big Sword</option>
+                    <option value="helmet1" data-thumbnail="img/icons/helmet1.png">Helmet 1</option>
+                    <option value="helmet2" data-thumbnail="img/icons/helmet2.png">Helmet 2</option>
+                    <option value="gloves1" data-thumbnail="img/icons/gloves1.png">Gloves 1</option>
+                    <option value="gloves2" data-thumbnail="img/icons/gloves2.png">Gloves 2</option>
+                    <option value="shield1" data-thumbnail="img/icons/shield1.png">Shield 1</option>
+                    <option value="shield2" data-thumbnail="img/icons/shield2.png">Shield 2</option>
+                    <option value="potion1" data-thumbnail="img/icons/potion1.png">Health</option>
+                    <option value="potion2" data-thumbnail="img/icons/potion2.png">Mana</option>
+                </select>
+
+                <!--Add item button -->
+                <button class="button" id="buttonAdd">Add Item!</button>
+                <br/>
+                <br/>
+                <span>Would you like to remove something from the array?  If so, enter the position of the item and click the Remove button:</span>
+                <input type="number" id="input3"/>
+                <button class="button" id="buttonRemove">Remove item</button>
+
+
+                <br/>
+                <br/>  
+                <br/>
+                <br/>
+                <!--Drop Loot button -->
+                <button class="button"  id="dropLoot">Drop Loot!</button>
+
+                <div id="result"></div>
+
+                <div id="result2"></div>
+                <br/>
+                <br/>
+                <div id="arrayLength2"></div>
+                <br/>
+                <br/>
+                <div id="arrayRemovals"></div>
+                
+            
+                <div id = "dropTable"></div>
+            </body>
+        </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/script.js"></script> 
+            <script src="js/selectpicker.js"></script>
+    </html>
